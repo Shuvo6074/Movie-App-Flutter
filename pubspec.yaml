@@ -1,0 +1,33 @@
+name: movie_app
+description: Movie App - Free Movies & Web Series
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+  cached_network_image: ^3.3.0
+  shared_preferences: ^2.2.2
+  carousel_slider: ^4.2.1
+  shimmer: ^3.0.0
+  share_plus: ^7.2.1
+  url_launcher: ^6.2.1
+  connectivity_plus: ^5.0.2
+  provider: ^6.1.1
+  webview_flutter: ^4.4.2
+  chewie: ^1.7.4
+  video_player: ^2.8.3
+  dio: ^5.4.0
+  path_provider: ^2.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
