@@ -20,17 +20,18 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
 
-      - name: Create Flutter project structure
+      - name: Setup Flutter project
         run: |
-          flutter create --org com.example temp_app
-          cp -r temp_app/android .
-          rm -rf temp_app
+          flutter create --org com.example --project-name movie_app temp_project
+          rm -rf temp_project/lib
+          cp -r lib temp_project/lib
+          cp pubspec.yaml temp_project/pubspec.yaml
+          cd temp_project
+          flutter pub get
+          flutter build apk --release
+          cp build/app/outputs/flutter-apk/app-release.apk ../app-release.apk
 
-      - run: flutter pub get
-
-      - run: flutter build apk --release
-      
       - uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: app-release.apk
